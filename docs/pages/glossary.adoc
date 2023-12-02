@@ -11,3 +11,9 @@ Aufgeteilter Aufgabenbereich bzw. ausgelagerter Teil der Applikation
 
 == Microservice
 Prozesse die untereinander Kommunizieren
+
+== Administrator
+Person, welche einen Node betreibt.
+
+== Nutzer
+Person, welche das Netzwerk zum kommunizieren nutzt.
