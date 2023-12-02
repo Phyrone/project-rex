@@ -1,3 +1,23 @@
 = Vision
 
-TODO...
+== Einführung
+Das Ziel dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten für das Netzwerk zu sammeln, zu analysieren und zu definieren. Dieses Dokument dient als Grundlage für die weitere Entwicklung des Systems und die Erstellung der Anforderungsspezifikation.
+
+=== Definitionen, Akronyme und Abkürzungen
+
+Siehe <<#glossary, Glossar>>.
+
+
+== Positionierung
+
+=== Motivation
+//Erläutern Sie kurz den Hintergrund, in dem das Projekt angesiedelt ist. Welches Problem soll gelöst werden, wie ist es entstanden? Welche Verbesserung wird angestrebt. Achten Sie darauf, eine fachliche (organisatorische, betriebswirtschaftliche) Perspektive einzunehmen.
+Dieses Projekt ermöglicht es unabhängigen Privatpersonen, Teil des Fedivers zu werden, indem die Grundlagen für ein dezentrales soziales Netzwerk geschaffen werden. Nutzer sollen in der Lage sein, einen Node einzurichten, zu pflegen und allgemein zu administrieren. Dadurch wird es möglich, sich in Zukunft finanziell von großen Unternehmen unabhängig zu machen und nicht mehr auf ihre Regelwerke angewiesen zu sein.
+
+Diese Unabhängigkeit ermöglicht es der Community, selbst darüber zu entscheiden, was als richtig erachtet wird und was nicht. Dies wirkt sich auch auf die Moderation aus, da sie nicht länger von einer einzelnen Instanz abhängig ist, sondern von der Gemeinschaft selbst gesteuert wird.
+
+Die Community erhält die Befugnis, sowohl das Netzwerk als auch dessen Inhalte eigenständig zu verwalten. Sie kann selbst bestimmen, welche Inhalte sichtbar sein sollen und welche nicht. Auf diese Weise kann die Community das Wachstum und die Etablierung von Inhalten ähnlich wie in einem holokratischen System aktiv beeinflussen.
+
+Es ist angestrebt, eine Plattform zu schaffen, die die Vielseitigkeit einer "Eierlegendewollmilchsau" besitzt, indem sie alle Funktionen aktueller sozialer Netzwerke vereint. Gleichzeitig soll jedoch die Flexibilität gewahrt bleiben, um viele verschiedene Nodes zu ermöglichen, die sich auf spezifische Funktionen spezialisieren können. Beispielsweise könnte es Nodes geben, die sich auf das Teilen von Bildern, Videos oder Texten fokussieren.
+
+Diese modulare Struktur erlaubt es Benutzern, Nodes nach ihren individuellen Präferenzen zu wählen und zu betreiben. So kann jeder Nutzer seine Erfahrung personalisieren und sich auf die spezifischen Funktionen konzentrieren, die für ihn am relevantesten sind. Dieser Ansatz fördert eine differenzierte und maßgeschneiderte Nutzung des sozialen Netzwerks, während gleichzeitig die Gesamtfunktionalität einer umfassenden Plattform gewährleistet wird.
