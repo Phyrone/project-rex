@@ -24,7 +24,7 @@ jobs:
         run: yarn build
         working-directory: pages
       - name: Archive pages
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: pages
           path: pages/build
@@ -46,7 +46,7 @@ jobs:
         run: asciidoctor-pdf $PARAMS
         working-directory: docs
       - name: Archive Book
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: book
           path: docs/build/
@@ -81,7 +81,7 @@ jobs:
           name: book
           path: export/book
       - name: Create Pages Archive
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: github-pages
           path: export
