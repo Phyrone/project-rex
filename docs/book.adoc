@@ -22,12 +22,14 @@
 = Project Rect X
 :leveloffset: +1
 
+include::{pagesdir}/glossary.adoc[]
+
 include::{pagesdir}/vision.adoc[]
 
 include::{pagesdir}/requirements.adoc[]
 
 include::{pagesdir}/architecture.adoc[]
 
-include::{pagesdir}/glossary.adoc[]
+
 
 :leveloffset: -1

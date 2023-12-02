@@ -1,0 +1,56 @@
+on:
+  push:
+    paths:
+      - 'docs/**'
+      - '.github/workflows/build-pages.yaml'
+      - 'pages/**'
+jobs:
+  build_pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        name: Checkout
+      - uses: actions/checkout@v4
+        name: Setup Node.js
+        with:
+          node-version: 'latest'
+          cache: 'yarn'
+          cache-dependency-path: 'pages'
+      - name: Install dependencies
+        run: yarn install
+        working-directory: pages
+      - name: Build pages
+        run: yarn build
+        working-directory: pages
+      - name: Archive pages
+        uses: actions/upload-artifact@v2
+        with:
+          name: pages
+          path: pages/build
+
+  build_docs:
+    runs-on: ubuntu-latest
+    name: Build Book
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build AsciiDoc
+        run: asciidoctor -r asciidoctor-diagram -r asciidoctor-mathematical -o build/book.html book.adoc
+        working-directory: docs
+      - name: Archive Book
+        uses: actions/upload-artifact@v2
+        with:
+          name: book
+          path: docs/build/book.html
+
+
+
+  publish_github_pages:
+    concurrency:
+      group: 'gh-pages'
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    needs:
+      - build_pages
+      - build_docs
