@@ -54,3 +54,14 @@ jobs:
     needs:
       - build_pages
       - build_docs
+    steps:
+      - name: Download pages
+        uses: actions/download-artifact@v2
+        with:
+          name: pages
+          path: pages/build
+      - name: Download book
+        uses: actions/download-artifact@v2
+        with:
+          name: book
+          path: docs/build
