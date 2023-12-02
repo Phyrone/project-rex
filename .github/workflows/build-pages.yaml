@@ -81,7 +81,7 @@ jobs:
       - create_github_pages
     concurrency:
       group: 'gh-pages'
-      cancel-in-progress: false
+      cancel-in-progress: true
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
