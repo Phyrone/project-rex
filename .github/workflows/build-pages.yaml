@@ -7,6 +7,7 @@ on:
 jobs:
   build_pages:
     runs-on: ubuntu-latest
+    name: Build Pages
     steps:
       - uses: actions/checkout@v4
         name: Checkout
@@ -32,7 +33,7 @@ jobs:
   build_docs:
     runs-on: ubuntu-latest
     name: Build Book
-    container: ghcr.io/asciidoctor/asciidoctor:cached
+    container: ghcr.io/asciidoctor/asciidoctor:cache
     env:
       PARAMS: "-r asciidoctor-diagram -r asciidoctor-mathematical -o build/book.html book.adoc"
     steps:
