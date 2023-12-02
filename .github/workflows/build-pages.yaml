@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 'latest'
           cache: 'yarn'
-          cache-dependency-path: 'pages'
+          cache-dependency-path: 'pages/yarn.lock'
       - name: Install dependencies
         run: yarn install
         working-directory: pages
