@@ -1,0 +1,31 @@
+:doctype: book
+:authors: ["Phyrone (Samuel Laqua) <phyrone@phyrone.de>", "AxdeExpe (Kevin Pietzsch) <kevin.pietzsch4@gmail.com>"]
+:toc:
+:toc-title: Overview
+
+:doctype: book
+:authors: ["Phyrone (Samuel Laqua) <phyrone@phyrone.de>"]
+:toc:
+:toc-title: Overview
+
+
+//directories
+:includedir: _include
+:plantumlsdir: plantuml
+:imagesdir: _images
+:diagramsdir: diagrams
+:pagesdir: pages
+
+// = Content =
+
+
+= Project Rect X
+:leveloffset: +1
+
+include::{pagesdir}/vision.adoc[]
+
+include::{pagesdir}/requirements.adoc[]
+
+include::{pagesdir}/architecture.adoc[]
+
+:leveloffset: -1
