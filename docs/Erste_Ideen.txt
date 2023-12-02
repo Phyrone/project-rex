@@ -1,0 +1,14 @@
+Normal:
+- Chatten (mit Dateiübertragung)
+- Sprachanrufe
+- Selbst Hosting (Servers)
+- Hosting (extern)
+- Foren
+- UI-Anpussungen (nicht priorisiert)
+- Batches (Sticker)
+- PWA Funktionalität
+
+Premium:
+- Animierte Profilbilder
+- Hosting von 1 Server kostenlos inbegriffen
+- Batches (Sticker)

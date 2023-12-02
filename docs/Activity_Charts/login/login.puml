@@ -1,0 +1,55 @@
+@startuml
+
+
+|Client|
+start
+
+partition Vaidate Token{
+
+if(token exists) then (yes)
+  :send to server;
+  |Server|
+  if(token valid) then (yes)
+    #green:Respond with userdata;
+  else (no)
+    #red:Respond invalid;
+  endif
+  :send response to client;
+  |Client|
+  if(valid response) then (yes)
+    #green:login success;
+    stop;
+  else (no)
+  endif;
+else (no)
+endif
+#red:no valid token;
+}
+
+partition Login{
+repeat :show login form;
+:send login data to server;
+|Server|
+:decode token;
+if(user exists) then (no)
+  #red:respond invalid;
+else (yes)
+  if(validate password) then (no)
+  #yellow:send warning mail?;
+  #red:respond invalid;
+  else (yes)
+    #green:respond sucess;
+  endif
+endif
+|Client|
+backward :try again;
+repeat while (is response valid) is (invalid) not (valid)
+}
+#blue:save token;
+#green:login success;
+stop
+
+
+
+
+@enduml

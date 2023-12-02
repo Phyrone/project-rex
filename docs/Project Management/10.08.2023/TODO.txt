@@ -1,0 +1,29 @@
+Client:
+	- Daten von Server holen
+	- Daten darstellen
+	- Videoplayer
+	- Karussel für mehrere Posts
+	- Error-Pages (418)
+	- Nodeübersicht
+	- Use-Cases (alle offenen)
+	- Searchbar (Suchmaschine --> Fuzzy search)
+	- Livestreams
+	- Chat
+	
+
+
+Server:
+	- Pakete empfangen (POST)
+	- Videos / Bilder encodieren
+	- Daten abspeichern
+	- Einloggen mit Schlüssel
+	- Eniloggen mit Google etc.
+	- 2 Faktor Auth.
+	- Fail to ban
+
+
+Dokumentation:
+	- Alles vom Server und Client (Code und Konzepte)
+	
+
+--> Alles testen
