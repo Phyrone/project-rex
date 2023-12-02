@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         name: Checkout
-      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         name: Setup Node.js
         with:
           node-version: 'latest'
@@ -29,7 +29,6 @@ jobs:
           name: pages
           path: pages/build
           if-no-files-found: error
-
   build_docs:
     runs-on: ubuntu-latest
     name: Build Book
@@ -51,24 +50,13 @@ jobs:
           name: book
           path: docs/build/
           if-no-files-found: error
-
-
-
-  publish_github_pages:
-    concurrency:
-      group: 'gh-pages'
-      cancel-in-progress: true
+  create_github_pages:
+    name: Merge
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
     needs:
       - build_pages
       - build_docs
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Download pages
         uses: actions/download-artifact@v2
@@ -82,10 +70,25 @@ jobs:
           path: pages/book
           if-no-files-found: error
       - name: Create Pages Archive
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
           name: github-pages
           path: pages
+  deploy_github_pages:
+    runs-on: ubuntu-latest
+    name: Deploy to GitHub Pages
+    needs:
+      - create_github_pages
+    concurrency:
+      group: 'gh-pages'
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+    steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
         id: deployment
