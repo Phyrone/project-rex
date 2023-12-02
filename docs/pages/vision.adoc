@@ -14,7 +14,7 @@ Siehe <<glossary.adoc#Glossary, Glossary>>
 
 === Motivation
 //Erläutern Sie kurz den Hintergrund, in dem das Projekt angesiedelt ist. Welches Problem soll gelöst werden, wie ist es entstanden? Welche Verbesserung wird angestrebt. Achten Sie darauf, eine fachliche (organisatorische, betriebswirtschaftliche) Perspektive einzunehmen.
-Dieses Projekt ermöglicht es unabhängigen Privatpersonen, Teil des Fedivers zu werden, indem die Grundlagen für ein dezentrales soziales Netzwerk geschaffen werden. Nutzer sollen in der Lage sein, einen Node einzurichten, zu pflegen und allgemein zu administrieren. Dadurch wird es möglich, sich in Zukunft finanziell von großen Unternehmen unabhängig zu machen und nicht mehr auf ihre Regelwerke angewiesen zu sein.
+Dieses Projekt ermöglicht es unabhängigen Privatpersonen, Teil des Fedivers zu werden, indem die Grundlagen für ein dezentrales soziales Netzwerk geschaffen werden. Administratoren sollen in der Lage sein, einen Node einzurichten, zu pflegen und allgemein zu administrieren. Dadurch wird es möglich, sich in Zukunft finanziell von großen Unternehmen unabhängig zu machen und nicht mehr auf ihre Regelwerke angewiesen zu sein.
 
 Diese Unabhängigkeit ermöglicht es der Community, selbst darüber zu entscheiden, was als richtig erachtet wird und was nicht. Dies wirkt sich auch auf die Moderation aus, da sie nicht länger von einer einzelnen Instanz abhängig ist, sondern von der Gemeinschaft selbst gesteuert wird.
 
