@@ -14,12 +14,12 @@ const config = {
     url: 'https://phyrone.github.io/',
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
-    baseUrl: '/project-rect-x/',
+    baseUrl: '/project-rex/',
 
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
     organizationName: 'phyrone', // Usually your GitHub org/user name.
-    projectName: 'project-rect-x', // Usually your repo name.
+    projectName: 'project-rex', // Usually your repo name.
 
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
