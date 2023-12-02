@@ -1,2 +1,3 @@
 Fediverse: - Zusammenschluss unabhängiger sozialer Netzwerke, die es den Benutzern ermöglichen, ähnlich wie auf einer einzigen Plattform miteinander zu interagieren.
+
 Node: - Eine Instanz (physisch als auch virtuell), welche von außen (User <--> Node, Node <--> Node) erreichbar ist.
