@@ -27,31 +27,29 @@ jobs:
         with:
           name: pages
           path: pages/build
+          if-no-files-found: error
 
   build_docs:
     runs-on: ubuntu-latest
     name: Build Book
+    container: ghcr.io/asciidoctor/asciidoctor
+    env:
+      PARAMS: "-r asciidoctor-diagram -r asciidoctor-mathematical -o build/book.html book.adoc"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Install AsciiDoctor
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.2'
-      - name: Install AsciiDoctor
-        run: gem install asciidoctor asciidoctor-diagram asciidoctor-mathematical
       - name: Build AsciiDoc (HTML)
-        run: asciidoctor -r asciidoctor-diagram -r asciidoctor-mathematical -o build/book.html book.adoc
+        run: asciidoctor $PARAMS
         working-directory: docs
       - name: Build AsciiDoc (PDF)
-        run: asciidoctor-pdf -r asciidoctor-diagram -r asciidoctor-mathematical -o build/book.pdf book.adoc
+        run: asciidoctor-pdf $PARAMS
         working-directory: docs
       - name: Archive Book
         uses: actions/upload-artifact@v2
         with:
           name: book
           path: docs/build/book.html
+          if-no-files-found: error
 
 
 
@@ -75,9 +73,9 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: pages
-          path: pages
+          path: export
       - name: Download book
         uses: actions/download-artifact@v2
         with:
           name: book
-          path: docs
+          path: export/book
