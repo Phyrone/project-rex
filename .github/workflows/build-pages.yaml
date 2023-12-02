@@ -74,20 +74,22 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: pages
-          path: export
+          path: pages
       - name: Download book
         uses: actions/download-artifact@v2
         with:
           name: book
-          path: export/book
+          path: pages/book
+          if-no-files-found: error
       - name: Create Pages Archive
         uses: actions/upload-artifact@v3
         with:
           name: github-pages
-          path: export
+          path: pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
         with:
           preview: true
           artifact-name: github-pages
+
 
