@@ -37,6 +37,12 @@ jobs:
       - name: Build AsciiDoc
         run: asciidoctor -r asciidoctor-diagram -r asciidoctor-mathematical -o build/book.html book.adoc
         working-directory: docs
+      - name: Install AsciiDoctor
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+      - name: Install AsciiDoctor
+        run: gem install asciidoctor asciidoctor-diagram asciidoctor-mathematical
       - name: Archive Book
         uses: actions/upload-artifact@v2
         with:
