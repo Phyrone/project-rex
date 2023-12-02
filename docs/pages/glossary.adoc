@@ -5,3 +5,9 @@ Zusammenschluss unabhängiger sozialer Netzwerke, die es den Benutzern ermöglic
 
 == Node
 Eine Instanz (physisch als auch virtuell), welche von außen (User <--> Node, Node <--> Node) erreichbar ist.
+
+== Prozesse
+Aufgeteilter Aufgabenbereich bzw. Teil der Applikation
+
+== Microservice
+Prozesse die untereinander Kommunizieren
