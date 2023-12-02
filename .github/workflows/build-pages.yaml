@@ -59,12 +59,12 @@ jobs:
       - build_docs
     steps:
       - name: Download pages
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: pages
           path: pages
       - name: Download book
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: book
           path: pages/book
