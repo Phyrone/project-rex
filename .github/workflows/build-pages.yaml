@@ -32,7 +32,7 @@ jobs:
   build_docs:
     runs-on: ubuntu-latest
     name: Build Book
-    container: ghcr.io/asciidoctor/asciidoctor
+    container: ghcr.io/asciidoctor/asciidoctor:cached
     env:
       PARAMS: "-r asciidoctor-diagram -r asciidoctor-mathematical -o build/book.html book.adoc"
     steps:
