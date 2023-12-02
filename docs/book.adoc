@@ -28,4 +28,6 @@ include::{pagesdir}/requirements.adoc[]
 
 include::{pagesdir}/architecture.adoc[]
 
+include::{pagesdir}/glossary.adoc[]
+
 :leveloffset: -1
