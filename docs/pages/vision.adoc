@@ -7,7 +7,7 @@ Das Ziel dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten
 
 === Definitionen, Akronyme und Abkürzungen
 
-Siehe <<glossary.adoc#Glossary, include::{pagesdir}/glossary.adoc>>
+Siehe <<glossary.adoc, include::{pagesdir}/glossary.adoc>>
 
 
 == Positionierung
