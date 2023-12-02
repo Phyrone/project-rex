@@ -7,13 +7,16 @@ Zusammenschluss unabhängiger sozialer Netzwerke, die es den Benutzern ermöglic
 Eine Instanz (physisch als auch virtuell), welche von außen (User <--> Node, Node <--> Node) erreichbar ist.
 
 == Prozesse
-Aufgeteilter Aufgabenbereich bzw. ausgelagerter Teil der Applikation
+Aufgeteilter Aufgabenbereich bzw. ausgelagerter Teil der Applikation.
 
 == Microservice
-Prozesse die untereinander Kommunizieren
+Prozesse die untereinander Kommunizieren.
 
 == Administrator
 Person, welche einen Node betreibt.
 
 == Nutzer
 Person, welche das Netzwerk zum kommunizieren nutzt.
+
+== Community
+Verbund von mehreren Nutzern und/oder Administratoren.
