@@ -38,7 +38,7 @@ jobs:
       PARAMS: "-r asciidoctor-diagram -r asciidoctor-mathematical -o build/book.html book.adoc"
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Build AsciiDoc (HTML)
         run: asciidoctor $PARAMS
         working-directory: docs
