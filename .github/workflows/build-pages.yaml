@@ -88,6 +88,7 @@ jobs:
           path: pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
+        id: deployment
         with:
           preview: true
           artifact-name: github-pages
