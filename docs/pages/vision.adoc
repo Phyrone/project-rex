@@ -1,3 +1,5 @@
+:pagesdir: pages
+
 = Vision
 
 == Einführung
@@ -5,7 +7,7 @@ Das Ziel dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten
 
 === Definitionen, Akronyme und Abkürzungen
 
-Siehe <<pages/glossary.adoc, Glossar>>.
+Siehe <<include::{pagesdir}/glossary.adoc[], Glossar>>.
 
 
 == Positionierung
