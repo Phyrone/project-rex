@@ -49,7 +49,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: book
-          path: docs/build/book.html
+          path: docs/build/
           if-no-files-found: error
 
 
@@ -80,3 +80,14 @@ jobs:
         with:
           name: book
           path: export/book
+      - name: Create Pages Archive
+        uses: actions/upload-artifact@v2
+        with:
+          name: github-pages
+          path: export
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
+        with:
+          preview: true
+          artifact-name: github-pages
+
