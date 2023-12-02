@@ -1,8 +1,8 @@
 :doctype: book
-:authors: ["Phyrone (Samuel Laqua) <phyrone@phyrone.de>", "AxdeExpe (Kevin Pietzsch) <kevin.pietzsch4@gmail.com>"]
 :toc:
 :toc-title: Overview
 :doctype: book
+:backend: html5
 :toc:
 :toc-title: Overview
 
