@@ -39,7 +39,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build AsciiDoc (HTML)
-        run: asciidoctor $PARAMS -o build/index.html book.adoc
+        run: asciidoctor $PARAMS -o build/book.html book.adoc
         working-directory: docs
       - name: Build AsciiDoc (PDF)
         run: asciidoctor-pdf $PARAMS -o build/book.pdf book.adoc
@@ -66,7 +66,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: book
-          path: pages/book
+          path: pages
           if-no-files-found: error
       - name: Create Pages Archive
         uses: actions/upload-pages-artifact@v2
