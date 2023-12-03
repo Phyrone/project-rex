@@ -26,7 +26,7 @@ The Administrator is responsible for the operation of the node and the data stor
 Refers to an individual piece of content, such as text, images, videos, links or text that a user shares on the platform for others to see, engage with.
 
 == Space
-TODO ...
+Is an area where content is posted, and visibility is restricted to either members only or to all users, depending on the specific settings.
 
 == Member
-TODO...
+Is a user who has subscribed to a space. They typically have special rights or privileges within the space, depending on the specific settings.
