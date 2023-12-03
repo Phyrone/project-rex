@@ -35,8 +35,8 @@ jobs:
           path: |
             target/
             ~/.cargo/
-          key: ${{ runner.os }}-rs-${{ matrix.TARGET }}-${{ hashFiles('**/Cargo.lock') }}
-          restore-keys: ${{ runner.os }}-rs-${{ matrix.TARGET }}-
+          key: ${{ runner.os }}-rs-${{ matrix.PROJECT }}-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-rs-${{ matrix.PROJECT }}-
       - name: Clippy
         run: cargo clippy
       - name: Build
