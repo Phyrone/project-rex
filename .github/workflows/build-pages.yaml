@@ -55,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - build_pages
-      - build_docs
+      - build_book
     steps:
       - name: Download pages
         uses: actions/download-artifact@v3
