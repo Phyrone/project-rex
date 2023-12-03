@@ -14,6 +14,8 @@
 :diagramsdir: diagrams
 :pagesdir: pages
 
+:hide-uri-scheme:
+
 // = Content =
 
 
