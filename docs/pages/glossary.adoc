@@ -1,22 +1,29 @@
 = Glossary
 
 == Fediverse
-Zusammenschluss unabhängiger sozialer Netzwerke, die es den Benutzern ermöglichen, ähnlich wie auf einer einzigen Plattform miteinander zu interagieren.
+A federation of independent social networks that allow users to interact with each other as if they were on a single platform.
+
+More about it can be found at this https://de.wikipedia.org/wiki/Fediverse[Wikipedia Article].
 
 == Node
-Eine Instanz (physisch als auch virtuell), welche von außen (User <--> Node, Node <--> Node) erreichbar ist.
+An instance of a social network that is part of the Fediverse. It can consist of one or more processes.
+The description of as node is independent of its implementation and is prefered for the description of the protocols used in this project.
 
-== Prozesse
-Aufgeteilter Aufgabenbereich bzw. ausgelagerter Teil der Applikation.
+== Other terms
+Other terms can be found in the
+https://www.informatik.htw-dresden.de/~hauptman/SEI/IEEE_Standard_Glossary_of_Software_Engineering_Terminology%20.pdf[IEEE Standard Glossary]
+(link provided by the https://www.htwk-leipzig.de/[HTW Dresden])
 
-== Microservice
-Prozesse die untereinander Kommunizieren.
+== User
+Someone who interacts with a Node.
+If a user needs an account depends on the context just to be clear.
 
 == Administrator
-Person, welche einen Node betreibt.
+A "User" with administrative privileges on a Node.
+The Administrator is responsible for the operation of the node and the data stored on it.
 
-== Nutzer
-Person, welche das Netzwerk zum kommunizieren nutzt.
+== Post
+TODO...
 
-== Community
-Verbund von mehreren Nutzern und/oder Administratoren.
+== Member
+TODO...
