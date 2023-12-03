@@ -11,8 +11,11 @@ gateway = { path = "gateway" }
 
 
 
+
 [workspace]
 members = [
     "common",
+    "database",
+    "database/migration",
     "gateway"
 ]
