@@ -1,5 +1,13 @@
 on:
   push:
+
+    paths:
+      - 'docs/**'
+      - '.github/workflows/build-pages.yaml'
+      - 'pages/**'
+    branches-ignore:
+      - renovate/**
+  pull_request:
     paths:
       - 'docs/**'
       - '.github/workflows/build-pages.yaml'
@@ -76,7 +84,7 @@ jobs:
   deploy_github_pages:
     runs-on: ubuntu-latest
     name: Deploy to GitHub Pages
-    if: github.ref == 'refs/heads/main'
+    if: github.head_ref == 'main' || github.base_ref == 'main'
     needs:
       - create_github_pages
     concurrency:
