@@ -9,19 +9,11 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: ${{ matrix.RUNS_ON }}
+    runs-on: ${{ matrix.PLATFORM }}
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - TARGET: 'x86_64-unknown-linux-gnu'
-            RUNS_ON: 'ubuntu-latest'
-          - TARGET: 'x86_64-pc-windows-msvc'
-            RUNS_ON: 'windows-latest'
-          - TARGET: 'x86_64-apple-darwin'
-            RUNS_ON: 'macos-latest'
-          - TARGET: 'aarch64-apple-darwin'
-            RUNS_ON: 'macos-latest'
+        PLATFORM: [ubuntu-latest, macos-latest, windows-latest]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,13 +24,14 @@ jobs:
           override: true
           target: ${{ matrix.TARGET }}
           components: clippy
+      - name: Clippy
+        run: cargo clippy
       - name: Build
         # TODO build all subprojects
-        run: cargo build --target ${{ matrix.TARGET }}
+        run: cargo build
       - name: Test
-        run: cargo test --target ${{ matrix.TARGET }}
+        run: cargo test
       - name: Benchmark
-        run: cargo bench --target ${{ matrix.TARGET }}
-      - name: Clippy
-        run: cargo clippy --target ${{ matrix.TARGET }}
+        run: cargo bench
+
 
