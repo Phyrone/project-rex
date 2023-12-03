@@ -23,7 +23,7 @@ A "User" with administrative privileges on a Node.
 The Administrator is responsible for the operation of the node and the data stored on it.
 
 == Post
-TODO...
+Refers to an individual piece of content, such as text, images, videos, links or text that a user shares on the platform for others to see, engage with.
 
 == Member
 TODO...
