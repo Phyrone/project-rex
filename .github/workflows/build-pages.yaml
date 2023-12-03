@@ -87,6 +87,7 @@ jobs:
   deploy_github_pages:
     runs-on: ubuntu-latest
     name: Deploy to GitHub Pages
+    if : github.ref == 'refs/heads/main'
     needs:
       - create_github_pages
     concurrency:
@@ -103,7 +104,7 @@ jobs:
         uses: actions/deploy-pages@v2
         id: deployment
         with:
-          preview: true
+          # preview: true
           artifact_name: github-pages
 
 
