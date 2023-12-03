@@ -13,7 +13,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        PROJECT: [ '.', 'gateway','database' ]
         PLATFORM: [ ubuntu-latest, macos-latest, windows-latest ]
     defaults:
       run:
@@ -35,13 +34,13 @@ jobs:
           path: |
             target/
             ~/.cargo/
-          key: ${{ runner.os }}-rs-${{ matrix.PROJECT }}-${{ hashFiles('**/Cargo.lock') }}
+          key: ${{ runner.os }}-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: ${{ runner.os }}-rs-${{ matrix.PROJECT }}-
       - name: Clippy
-        run: cargo clippy
+        run: cargo clippy --workspace
       - name: Build
-        run: cargo build
+        run: cargo build --workspace
       - name: Test
-        run: cargo test
+        run: cargo test --workspace
 
 
