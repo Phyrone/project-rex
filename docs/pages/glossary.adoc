@@ -25,5 +25,8 @@ The Administrator is responsible for the operation of the node and the data stor
 == Post
 Refers to an individual piece of content, such as text, images, videos, links or text that a user shares on the platform for others to see, engage with.
 
+== Space
+TODO ...
+
 == Member
 TODO...
