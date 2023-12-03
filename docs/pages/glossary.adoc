@@ -12,7 +12,7 @@ The description of as node is independent of its implementation and is prefered 
 == Other terms
 Other terms can be found in the
 https://www.informatik.htw-dresden.de/~hauptman/SEI/IEEE_Standard_Glossary_of_Software_Engineering_Terminology%20.pdf[IEEE Standard Glossary]
-(link provided by thehttps://www.htw-dresden.de/[HTW Dresden])
+(link provided by the https://www.htw-dresden.de/[HTW Dresden])
 
 == User
 Someone who interacts with a Node.
