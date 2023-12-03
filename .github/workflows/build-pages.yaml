@@ -86,11 +86,10 @@ jobs:
   deploy_github_pages:
     runs-on: ubuntu-latest
     name: Deploy to GitHub Pages
-    if: github.ref == 'refs/head/main' || github.base_ref == 'main'
     needs:
       - create_github_pages
     concurrency:
-      group: 'gh-pages'
+      group: gh-pages-${{ github.ref }}
       cancel-in-progress: true
     environment:
       name: github-pages
