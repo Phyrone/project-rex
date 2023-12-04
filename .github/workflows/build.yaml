@@ -46,9 +46,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - PLATFORM : ubuntu-latest
-            TARGET: aarch64-unknown-linux-gnu
-          - PLATFORM : macos-latest
+          #- PLATFORM : ubuntu-latest
+          #  TARGET: aarch64-unknown-linux-gnu
+          - PLATFORM : macos-13
             TARGET: aarch64-apple-darwin
           # TODO windows on arm
     steps:
