@@ -71,7 +71,7 @@ jobs:
           key: ${{ runner.os }}-${{ matrix.TARGET }}-rs-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: ${{ runner.os }}-${{ matrix.TARGET }}-rs-
       - name: Clippy
-        run: cargo clippy --workspace
+        run: cargo clippy --workspace --target ${{ matrix.TARGET }}
       - name: Build
-        run: cargo build --workspace
+        run: cargo build --workspace --target ${{ matrix.TARGET }}
 
