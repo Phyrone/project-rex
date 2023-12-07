@@ -1,6 +1,8 @@
 .idea
 *.iml
 
+.test
+.tmp
 
 # Added by cargo
 
