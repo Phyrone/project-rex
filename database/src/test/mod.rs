@@ -1,7 +1,7 @@
 use std::time::Duration;
 
-use get_port::tcp::TcpPort;
 use get_port::{Ops, Range};
+use get_port::tcp::TcpPort;
 use pg_embed::pg_enums::PgAuthMethod;
 use pg_embed::pg_fetch::{PgFetchSettings, PostgresVersion};
 use pg_embed::postgres::{PgEmbed, PgSettings};
@@ -36,7 +36,7 @@ impl TestDatabase {
                 max: u16::MAX,
             },
         )
-        .expect("failed to find an open port for the test postgres database");
+            .expect("failed to find an open port for the test postgres database");
         let settings = PgSettings {
             database_dir: temp_dir.to_path_buf(),
             port,
@@ -51,10 +51,21 @@ impl TestDatabase {
             version: PostgresVersion("16.1.1"),
             ..Default::default()
         };
+
+        let download_url = format!(
+            "{}/maven2/io/zonky/test/postgres/embedded-postgres-binaries-{}/{}/embedded-postgres-binaries-{}-{}.jar",
+            &postgres_fetch_settings.host,
+            &postgres_fetch_settings.platform(),
+            &postgres_fetch_settings.version.0,
+            &postgres_fetch_settings.platform(),
+            &postgres_fetch_settings.version.0
+        );
+
         let mut embedded_database = PgEmbed::new(settings, postgres_fetch_settings)
             .await
             .expect("failed to create embedded postgres database");
 
+        println!("downloading postgres binaries from {} if needed", download_url);
         embedded_database
             .setup()
             .await
