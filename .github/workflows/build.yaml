@@ -1,0 +1,77 @@
+name: Build
+on:
+  push:
+    paths-ignore:
+      - 'docs/**'
+      - '.github/workflows/build-pages.yaml'
+      - 'pages/**'
+
+jobs:
+  build:
+    name: Build
+    runs-on: ${{ matrix.PLATFORM }}
+    strategy:
+      fail-fast: false
+      matrix:
+        PLATFORM: [ ubuntu-latest, macos-latest, windows-latest ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1.0.6
+        with:
+          toolchain: stable
+          override: true
+          target: ${{ matrix.TARGET }}
+          components: clippy
+      - name: Build Cache
+        uses: actions/cache@v3
+        continue-on-error: false
+        with:
+          path: |
+            target/
+            ~/.cargo/
+          key: ${{ runner.os }}-rs-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-rs-
+      - name: Clippy
+        run: cargo clippy --workspace
+      - name: Build
+        run: cargo build --workspace
+      - name: Test
+        run: cargo test --workspace
+  build_other_architectures:
+    name: Build Other Architectures
+    runs-on: ${{ matrix.PLATFORM }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          #- PLATFORM : ubuntu-latest
+          #  TARGET: aarch64-unknown-linux-gnu
+          - PLATFORM : macos-13
+            TARGET: aarch64-apple-darwin
+          # TODO windows on arm
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1.0.6
+        with:
+          toolchain: stable
+          override: true
+          target: ${{ matrix.TARGET }}
+          components: clippy
+      - name: Build Cache
+        uses: actions/cache@v3
+        continue-on-error: false
+        with:
+          path: |
+            target/
+            ~/.cargo/
+          key: ${{ runner.os }}-${{ matrix.TARGET }}-rs-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-${{ matrix.TARGET }}-rs-
+      - name: Clippy
+        run: cargo clippy --workspace --target ${{ matrix.TARGET }}
+      - name: Build
+        run: cargo build --workspace --target ${{ matrix.TARGET }}
+
