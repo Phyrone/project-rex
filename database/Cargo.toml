@@ -8,7 +8,11 @@ edition = "2021"
 [dependencies]
 get-port = "4.0.0"
 migration = { path = "migration" }
-sea-orm = { version = "0.12.7", features = ["sqlx-postgres", "runtime-tokio-rustls"] }
+sea-orm = { version = "0.12.9", features = ["sqlx-postgres", "runtime-tokio-rustls"] }
+serde = { version = "1.0.193", features = ["derive", "rc", "alloc"] }
+sqlx = "0.7.3"
+temp_testdir = "0.2.3"
+tempdir = "0.3.7"
 tokio = { version = "1.34.0", features = ["full"] }
 #sea-orm-migration={version = "0.12.6",features = ["runtime-tokio-rustls","sqlx-postgres"]}
 
